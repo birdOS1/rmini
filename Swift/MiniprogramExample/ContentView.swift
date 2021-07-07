@@ -12,7 +12,7 @@ struct ContentView : View {
     @State var appId: String = "wxa2feca6b7cce2b49"
     
     // 小程序远程路径， 通过 appId 获取
-    @State var sourceBaseApi: String = "http://10.0.2.71:56711/"
+    @State var sourceBaseApi: String = "https://rc.quvideo.vip/"
     
     var body: some View {
         VStack {
@@ -38,7 +38,7 @@ struct ContentView : View {
                     .background(Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0))
                 VStack {
                     Button(action: {
-                        let miniprogramZipURL = self.sourceBaseApi.appending(self.appId).appending(".zip")
+                        let miniprogramZipURL = self.sourceBaseApi.appending(self.appId).appending(".zip?2021")
                         MiniprogramRunningController().run(self.appId, URL(string: miniprogramZipURL)!)
                     }) {
                         Text("打开小程序")
